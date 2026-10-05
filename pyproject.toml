@@ -1,0 +1,42 @@
+[project]
+name = "orca-advanced-calibration"
+version = "0.1.0"
+description = "Local OrcaSlicer plugin for automated Ellis-style flow-ratio calibration plates"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+authors = [{ name = "Ghostship" }]
+dependencies = []
+
+[project.scripts]
+orca-calibrate = "orca_advanced_calibration.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/orca_advanced_calibration"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.ruff.lint.per-file-ignores]
+# plugin.py embeds a self-contained HTML/CSS/JS panel in a Python string. The
+# PEP 723 header comment and the JS lines cannot be wrapped without breaking
+# the page or the plugin metadata.
+"src/orca_advanced_calibration/plugin.py" = ["E501"]
+# The bundler embeds library sources as Python string literals; their length is
+# the bundled source's, not this file's.
+"src/orca_advanced_calibration/bundle.py" = ["E501"]
