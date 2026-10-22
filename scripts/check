@@ -1,0 +1,8 @@
+#!/bin/sh
+# Repository verification. A privacy finding fails the run.
+set -eu
+cd "$(dirname "$0")/.."
+python3 -m pytest -q
+ruff check .
+ruff format --check .
+python3 scripts/check-privacy.py
