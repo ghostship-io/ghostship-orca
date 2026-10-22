@@ -1,0 +1,13 @@
+# The pinned privacy check.
+#
+# The check has one canonical source: ghostship-io/ghostship-agent, the
+# fleet's tooling owner. This repository carries a vendored copy of the
+# two shared files, and this lock records the copy it is pinned to, so
+# the rules cannot drift apart silently.
+#
+# The pins are the sha256 of the canonical file contents. The drift test
+# recomputes them and fails when a vendored copy differs.
+canonical-repository ghostship-io/ghostship-agent
+canonical-path scripts/check-privacy.py
+scripts/check-privacy.py 8a0ff9215e13cb757ee715f1437fa6378fa05c14a99ba639997dbce466984740
+scripts/source_privacy.py 1c74bb20f6980c598ec97e405d7a8f46a6a8804748fad98312c5593e46ab3c73

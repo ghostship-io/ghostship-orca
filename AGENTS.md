@@ -36,7 +36,10 @@ Run these before calling work done:
 python -m pytest -q
 ruff check .
 ruff format --check .
+python3 scripts/check-privacy.py
 ```
+
+`scripts/check` runs the same four commands. A privacy finding fails it.
 
 To smoke-test the plugin bundle in isolation:
 
