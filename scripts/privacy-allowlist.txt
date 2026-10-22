@@ -8,6 +8,9 @@
 # A line is "value  #  reason". A value of the form "suffix:<text>" allows
 # any value ending in that text.
 
+# --- agent attribution ---------------------------------------------------
+suffix:@opencode.ai    # agent co-author attribution address, no account behind it
+
 # --- upstream open-source projects ---------------------------------------
 OrcaSlicer/OrcaSlicer    # upstream open-source slicer this tool generates plates for
 
