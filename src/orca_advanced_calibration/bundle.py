@@ -118,7 +118,7 @@ def plugin_metadata() -> dict[str, str]:
             "Generate an Ellis-style flow-ratio calibration plate with per-object "
             "print_flow_ratio overrides and send it to the plate."
         ),
-        "author": "caelx",
+        "author": "Ghostship contributors",
         "version": _read_version(),
     }
 

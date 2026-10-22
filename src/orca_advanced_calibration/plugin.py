@@ -4,7 +4,7 @@
 # [tool.orcaslicer.plugin]
 # name = "Advanced Flow Calibration"
 # description = "Generate an Ellis-style flow-ratio calibration plate with per-object print_flow_ratio overrides and send it to the plate."
-# author = "caelx"
+# author = "Ghostship contributors"
 # version = "0.1.0"
 # ///
 """OrcaSlicer plugin: automated Ellis-style flow-ratio calibration.

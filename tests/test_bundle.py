@@ -94,6 +94,18 @@ class TestBundleContents:
         for key in ("name", "description", "author", "version"):
             assert f"{key} =" in head, key
 
+    def test_the_author_is_the_collective(self):
+        """The bundle names the collective, never a person."""
+        assert bundle.plugin_metadata()["author"] == "Ghostship contributors"
+
+    def test_the_bundle_and_the_plugin_agree_on_the_author(self):
+        """The plugin's own header carries the same author as the bundle."""
+        from pathlib import Path
+
+        plugin = (Path(bundle.__file__).parent / "plugin.py").read_text(encoding="utf-8")
+        author = bundle.plugin_metadata()["author"]
+        assert f'# author = "{author}"' in plugin.split("# ///", 2)[1]
+
     def test_excludes_cli_module(self):
         names = [name for name, _ in bundle.read_sources()]
         assert "cli" not in names
