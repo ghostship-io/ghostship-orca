@@ -1,0 +1,15 @@
+# Intentionally public identifiers.
+#
+# Every repository in this fleet is treated as public, so the privacy check
+# fails on anything that reads as a person's identity or a private account.
+# This file records the values that are deliberately public, with the reason,
+# so a new value is reviewed rather than silently added.
+#
+# A line is "value  #  reason". A value of the form "suffix:<text>" allows
+# any value ending in that text.
+
+# --- upstream open-source projects ---------------------------------------
+OrcaSlicer/OrcaSlicer    # upstream open-source slicer this tool generates plates for
+
+# --- this repository -----------------------------------------------------
+ghostship-io/ghostship-orca    # this repository's published forge name
